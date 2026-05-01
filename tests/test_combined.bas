@@ -1,0 +1,18 @@
+10 REM Combined features test
+20 LET TOTAL = 0
+30 PRINT "Sum of even numbers:"
+40 FOR I = 1 TO 10
+50 LET R = I
+60 REMLOOP:
+70 IF R >= 2 THEN GOTO 100
+80 IF R = 0 THEN GOTO 130
+90 GOTO 150
+100 LET R = R - 2
+110 GOTO 70
+120 REM Even number found
+130 PRINT I; " is even"
+140 LET TOTAL = TOTAL + I
+150 NEXT I
+160 PRINT "Total sum: "; TOTAL
+170 END
+

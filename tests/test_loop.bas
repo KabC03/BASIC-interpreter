@@ -1,0 +1,13 @@
+10 REM FOR loop counting
+20 PRINT "Counting to 10:"
+30 FOR I = 1 TO 10
+40 PRINT I
+50 NEXT I
+60 PRINT
+70 PRINT "Counting backwards:"
+80 FOR I = 10 TO 1
+90 PRINT I
+100 NEXT I
+110 PRINT "Done"
+120 END
+

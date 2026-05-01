@@ -1,0 +1,9 @@
+10 REM Countdown timer
+20 PRINT "Countdown from 10:"
+30 LET COUNT = 10
+40 LOOP:
+50 PRINT COUNT
+60 LET COUNT = COUNT - 1
+70 IF COUNT > 0 THEN GOTO 40
+80 PRINT "Blast off!"
+90 END

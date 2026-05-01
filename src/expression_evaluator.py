@@ -10,7 +10,11 @@ def expression_evaluator(expr: str, variables: dict) -> float:
     try:
         # Replace variables with their values
         evalExpr: str = expr;
-        for var in variables:
+        
+        # Sort variables by length (longest first) to avoid partial replacements
+        sortedVars: list = sorted(variables.keys(), key=len, reverse=True);
+        
+        for var in sortedVars:
             evalExpr = evalExpr.replace(var, str(variables[var]));
         
         result = eval(evalExpr);
