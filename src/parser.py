@@ -115,7 +115,9 @@ def parser(tokens: list) -> dict:
                 
                 if tokenType in ["EQUALS", "COMPARISON"]:
                     # Handle >= <= != == <>
-                    if token in [">=", "<=", "!=", "==", "<>"]:
+                    if token == "<>":
+                        condition += " != ";
+                    elif token in [">=", "<=", "!=", "=="]:
                         condition += " " + token + " ";
                     elif token == "=":
                         condition += " == ";

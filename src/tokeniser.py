@@ -57,6 +57,20 @@ def tokeniser(line: str) -> list:
             i += 1;
             continue;
         
+        # Two character comparison operators
+        if i + 1 < len(line):
+            twoChar: str = line[i:i+2];
+
+            if twoChar in ['>=', '<=', '!=', '==', '<>']:
+                if currentToken != "":
+                    tokenType: str = getTokenType(currentToken);
+                    tokens.append((currentToken, tokenType));
+                    currentToken = "";
+
+                tokens.append((twoChar, "COMPARISON"));
+                i += 2;
+                continue;
+        
         # Single character operators and delimiters
         if char in ['=', '+', '-', '*', '/', '(', ')', ',', ':', ';']:
             if currentToken != "":
@@ -215,7 +229,5 @@ def tokeniseLine(line: str) -> list:
         simpleTokens.append(tokenTuple[0]);
     
     return simpleTokens;
-
-
 
 
